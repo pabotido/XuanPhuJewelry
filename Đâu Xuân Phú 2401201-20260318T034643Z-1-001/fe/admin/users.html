@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Xuan Phu Admin | Users</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/admin.css">
+  <link rel="shortcut icon" href="/img/icon.ico" type="image/x-icon">
+</head>
+<body data-page="admin" data-admin-section="users">
+  <div class="admin-page" id="admin-page-shell">
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar-main">
+        <div class="admin-sidebar-brand">
+          <div class="admin-sidebar-mark">&#8801;</div>
+          <div><p class="admin-sidebar-label">He thong quan ly</p><h1>Xuan Phu Admin</h1></div>
+        </div>
+        <div class="admin-sidebar-group">
+          <p class="admin-sidebar-title">Danh muc quan ly</p>
+          <nav class="admin-tabs admin-sidebar-nav">
+            <a class="tab" data-section="products" href="/admin">Quan ly san pham</a>
+            <a class="tab" data-section="orders" href="/admin/orders">Quan ly don hang</a>
+            <a class="tab active" data-section="users" href="/admin/users">Quan ly tai khoan</a>
+          </nav>
+        </div>
+      </div>
+      <div class="admin-sidebar-footer">
+        <div class="admin-sidebar-group">
+          <p class="admin-sidebar-title">Truy cap nhanh</p>
+          <div class="admin-quick-links">
+            <a class="admin-quick-link" href="/">Xem trang khach</a>
+            <button class="admin-quick-link is-danger" type="button" id="admin-logout">Dang xuat</button>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="admin-workspace">
+      <header class="admin-topbar">
+        <div>
+          <p class="admin-breadcrumb" id="admin-current-label">He thong quan ly / Tai khoan</p>
+          <h2 class="admin-topbar-title">Bang dieu khien quan tri</h2>
+          <p class="admin-topbar-subtitle" id="admin-current-description">Theo doi thong tin lien he, tong chi tieu va lich su don hang cua tung tai khoan.</p>
+        </div>
+      </header>
+
+      <main class="admin-main">
+        <div class="tab-content active" id="users-tab">
+          <section class="admin-shell admin-panel">
+            <div class="section-heading admin-heading">
+              <div>
+                <p class="section-kicker">Danh sach tai khoan</p>
+                <h2>Tai khoan khach hang</h2>
+                <p class="section-subtitle">Theo doi thong tin lien he, so luong don da dat, tong chi tieu va lich su don hang cua tung tai khoan.</p>
+              </div>
+              <span class="admin-head-chip">Ket noi truc tiep tu Users + UserProfiles</span>
+            </div>
+            <div id="users-feedback" class="admin-feedback" aria-live="polite"></div>
+            <section class="admin-table-region" id="user-list">
+              <p class="gallery-message">Dang tai danh sach tai khoan...</p>
+            </section>
+          </section>
+        </div>
+      </main>
+
+      <footer class="admin-footer"><p>&copy; 2026 Xuan Phu. All rights reserved.</p></footer>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/api-client.js"></script>
+  <script src="/js/admin-pages.js"></script>
+  <script src="/js/admin-users-section.js"></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Xuan Phu Jewelry | Tai khoan</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha512-t4Wk54rsPXxNZ+BOqGBEYM+nRPtB6S7VFH9X/1BHkPu6ePv3FvzWZpW+BmUi4nWkN2+d2rB9q85z+3GVVmZJw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="/css/storefront.css">
+  <link rel="shortcut icon" href="/img/icon.ico" type="image/x-icon">
+</head>
+<body data-page="storefront" data-store-page="account">
+  <div class="page-shell">
+    <header class="topbar" id="page-top">
+      <div class="brand-lockup">
+        <p class="eyebrow">Thong tin ca nhan</p>
+        <h1>Tai khoan</h1>
+        <p class="brand-summary">Page nay tach rieng de hien thong tin user, lich su don hang va thao tac dang xuat.</p>
+      </div>
+      <div class="actions">
+        <label class="search-shell" for="phu-search"><span class="search-icon" aria-hidden="true">⌕</span><input id="phu-search" type="search" placeholder="Tim san pham..."></label>
+        <button class="btn secondary account-trigger" id="open-account" type="button"><span class="account-trigger-kicker" id="account-trigger-kicker">Tai khoan</span><strong class="account-trigger-name" id="account-trigger-name">Dang nhap / Dang ky</strong></button>
+        <button class="btn primary cart-toggle" id="open-cart" type="button">Gio hang <span class="cart-count" id="cart-count">0</span></button>
+      </div>
+    </header>
+
+    <nav class="tabs" aria-label="Dieu huong cua hang">
+      <a class="tab" href="/">Pho bien</a>
+      <a class="tab" href="/latest">Moi nhat</a>
+      <a class="tab" href="/favorites">Yeu thich</a>
+      <a class="tab" href="/prices">Gia vang hom nay</a>
+      <a class="tab active" href="/account">Tai khoan</a>
+    </nav>
+
+    <main>
+      <section class="surface-panel">
+        <p id="account-feedback" class="auth-feedback" aria-live="polite"></p>
+        <section class="account-session-card" id="account-session-card">
+          <div class="account-session-head">
+            <div>
+              <p class="auth-kicker">Dang su dung</p>
+              <h4 id="session-user-name">Khach hang</h4>
+            </div>
+            <button class="btn ghost" id="account-logout" type="button">Dang xuat</button>
+          </div>
+          <div class="account-session-grid">
+            <article class="account-session-item"><span>Email</span><strong id="session-user-email">-</strong></article>
+            <article class="account-session-item"><span>So dien thoai</span><strong id="session-user-phone">-</strong></article>
+            <article class="account-session-item account-session-item-full"><span>Dia chi nhan hang</span><strong id="session-user-address">-</strong></article>
+          </div>
+        </section>
+
+        <section class="account-history-card" id="account-history-card">
+          <div class="account-history-head">
+            <div>
+              <p class="auth-kicker">Lich su don hang</p>
+              <h4>Don hang cua tai khoan nay</h4>
+            </div>
+          </div>
+          <div class="account-history-list" id="account-order-history">
+            <p class="account-history-empty">Dang tai lich su don hang...</p>
+          </div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <div class="overlay-shell" id="cart-overlay" aria-hidden="true">
+    <div class="overlay-backdrop" data-close-overlay="cart-overlay"></div>
+    <div class="overlay-panel cart-panel-modern">
+      <button class="overlay-close" type="button" data-close-overlay="cart-overlay" aria-label="Dong">×</button>
+      <div class="cart-modern-container">
+        <div class="cart-modern-left">
+          <div class="cart-modern-header"><p class="section-kicker">Don hang cua ban</p><h3>Gio hang</h3><p class="cart-side-note">Tai khoan da dang nhap co the dat hang ngay tai day.</p></div>
+          <ul class="cart-modern-items" id="cart-items"><li class="cart-modern-empty"><p>Chua co san pham nao trong gio.</p></li></ul>
+          <div class="cart-side-panel"><strong>Luu y</strong><p>Thong tin ten, so dien thoai va dia chi se duoc prefill tu profile dang nhap.</p><button class="cart-side-clear" id="clear-cart" type="button">Xoa toan bo gio hang</button></div>
+        </div>
+        <div class="cart-modern-right">
+          <div class="payment-card">
+            <div class="cart-summary">
+              <div class="cart-summary-row"><span>Tam tinh</span><strong id="cart-subtotal">0 d</strong></div>
+              <div class="cart-summary-row"><span>Phi giao hang</span><strong>Mien phi</strong></div>
+              <div class="cart-summary-row cart-summary-total"><span>Tong cong</span><strong id="cart-total">0 d</strong></div>
+            </div>
+            <div class="payment-method mb-4"><label class="payment-label">Phuong thuc thanh toan</label><div class="payment-options"><button class="payment-btn active" type="button" data-method="bank">The ngan hang</button><button class="payment-btn" type="button" data-method="cod">Thanh toan khi nhan hang</button></div></div>
+            <form class="needs-validation checkout-form-shell" id="checkout-form" novalidate>
+              <input type="hidden" id="checkout-payment" name="checkout-payment" value="bank">
+              <div class="mb-3 field-block"><label class="form-label small fw-bold" for="checkout-name">Ho va ten</label><input class="form-control payment-input" id="checkout-name" name="checkout-name" type="text" placeholder="Nhap ho va ten" required></div>
+              <div id="card-payment-section" style="display: none;"><div class="mb-3 field-block"><label class="form-label small fw-bold" for="card-number">So the</label><input class="form-control payment-input card-field" id="card-number" type="text" placeholder="1234 5678 9012 3456"></div></div>
+              <div id="cod-payment-section" style="display: block;">
+                <div class="mb-3 field-block"><label class="form-label small fw-bold" for="checkout-phone">So dien thoai</label><input class="form-control payment-input" id="checkout-phone" name="checkout-phone" type="tel" placeholder="0123 456 789" required></div>
+                <div class="mb-3 field-block"><label class="form-label small fw-bold" for="checkout-address">Dia chi nhan hang</label><textarea class="form-control payment-input" id="checkout-address" name="checkout-address" rows="2" placeholder="Nhap dia chi nhan hang" required></textarea></div>
+                <div class="mb-3 field-block"><label class="form-label small fw-bold" for="checkout-notes">Ghi chu</label><textarea class="form-control payment-input" id="checkout-notes" name="checkout-notes" rows="2" placeholder="Vi du: giao gio hanh chinh"></textarea></div>
+              </div>
+              <div id="checkout-feedback" class="alert mb-3 d-none" role="alert"></div>
+              <button class="btn-checkout w-100" id="place-order" type="submit">Hoan tat dat hang</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js" integrity="sha512-VQV96+PgNMbOmHd/xvUqLT2bzzQxPj5qKJ0QVMNmJVmtAK54L1hOh7E4vlN5CkHMJxLMI4uu6jnJL8H/+nEVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/js/api-client.js"></script>
+  <script src="/js/storefront-pages.js"></script>
+</body>
+</html>

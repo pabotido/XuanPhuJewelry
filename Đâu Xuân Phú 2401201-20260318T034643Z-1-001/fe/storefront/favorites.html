@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Xuan Phu Jewelry | Yeu thich</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha512-t4Wk54rsPXxNZ+BOqGBEYM+nRPtB6S7VFH9X/1BHkPu6ePv3FvzWZpW+BmUi4nWkN2+d2rB9q85z+3GVVmZJw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="/css/storefront.css">
+  <link rel="shortcut icon" href="/img/icon.ico" type="image/x-icon">
+</head>
+<body data-page="storefront" data-store-page="favorites">
+  <div class="page-shell">
+    <header class="topbar" id="page-top">
+      <div class="brand-lockup">
+        <p class="eyebrow">Danh sach rieng</p>
+        <h1>San pham yeu thich</h1>
+        <p class="brand-summary">Trang nay dung local storage de luu cac mau ma ban danh dau, tach khoi home de xem lai nhanh hon.</p>
+      </div>
+      <div class="actions">
+        <label class="search-shell" for="phu-search"><span class="search-icon" aria-hidden="true">⌕</span><input id="phu-search" type="search" placeholder="Tim trong yeu thich..."></label>
+        <button class="btn secondary account-trigger" id="open-account" type="button"><span class="account-trigger-kicker" id="account-trigger-kicker">Tai khoan</span><strong class="account-trigger-name" id="account-trigger-name">Dang nhap / Dang ky</strong></button>
+        <button class="btn primary cart-toggle" id="open-cart" type="button">Gio hang <span class="cart-count" id="cart-count">0</span></button>
+      </div>
+    </header>
+
+    <nav class="tabs" aria-label="Dieu huong cua hang">
+      <a class="tab" href="/">Pho bien</a>
+      <a class="tab" href="/latest">Moi nhat</a>
+      <a class="tab active" href="/favorites">Yeu thich</a>
+      <a class="tab" href="/prices">Gia vang hom nay</a>
+      <a class="tab" href="/account">Tai khoan</a>
+    </nav>
+
+    <main>
+      <section class="collection-shell surface-panel">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Danh sach cua ban</p>
+            <h2>San pham da luu</h2>
+            <p class="section-subtitle">Tat ca san pham ban bam tim deu duoc gom lai tai day. Neu chua co, page nay se hien thong bao rong.</p>
+          </div>
+        </div>
+        <section class="gallery favorite-gallery"></section>
+        <p class="favorite-empty">Chua co san pham yeu thich. Bam bieu tuong tim o trang pho bien hoac moi nhat de luu lai.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <p class="footer-kicker">Xuan Phu Jewelry</p>
+        <strong>Trang favorites tach rieng</strong>
+        <p>Khong can giu tab favorites trong index nua. Toan bo du lieu duoc gom o mot page doc lap.</p>
+      </div>
+      <div class="footer-links">
+        <div><span class="footer-heading">Storefront</span><a href="/">Pho bien</a><a href="/latest">Moi nhat</a><a href="/prices">Gia vang</a></div>
+        <div><span class="footer-heading">Tai khoan</span><a href="/login">Dang nhap</a><a href="/register">Dang ky</a><a href="/account">Thong tin ca nhan</a></div>
+      </div>
+      <div class="footer-contact">
+        <span class="footer-heading">Lien he</span>
+        <a href="tel:0900000000">Hotline: 0900 000 000</a>
+        <a href="mailto:support@xuanphu.vn">support@xuanphu.vn</a>
+        <p>&copy; 2026 Xuan Phu. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <div class="overlay-shell" id="product-detail-modal" aria-hidden="true">
+    <div class="overlay-backdrop" data-close-overlay="product-detail-modal"></div>
+    <section class="overlay-panel detail-panel">
+      <button class="overlay-close" type="button" data-close-overlay="product-detail-modal" aria-label="Dong">×</button>
+      <div class="detail-grid">
+        <div class="detail-visual"><img id="detail-image" alt="Chi tiet san pham"></div>
+        <div class="detail-copy">
+          <p class="eyebrow" id="detail-category">San pham</p>
+          <h2 id="detail-name">Ten san pham</h2>
+          <p class="detail-price" id="detail-price">0 d</p>
+          <p class="detail-description" id="detail-description">Mo ta san pham.</p>
+          <dl class="detail-specs">
+            <div><dt>Ma san pham</dt><dd id="detail-sku">-</dd></div>
+            <div><dt>Chat lieu</dt><dd id="detail-material">-</dd></div>
+            <div><dt>Khoi luong</dt><dd id="detail-weight">-</dd></div>
+          </dl>
+          <div class="detail-actions">
+            <button class="btn secondary" id="detail-add-cart" type="button">Them vao gio</button>
+            <button class="btn primary" id="detail-buy-now" type="button">Mua ngay</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="overlay-shell" id="cart-overlay" aria-hidden="true">
+    <div class="overlay-backdrop" data-close-overlay="cart-overlay"></div>
+    <div class="overlay-panel cart-panel-modern">
+      <button class="overlay-close" type="button" data-close-overlay="cart-overlay" aria-label="Dong">×</button>
+      <div class="cart-modern-container">
+        <div class="cart-modern-left">
+          <div class="cart-modern-header"><p class="section-kicker">Don hang cua ban</p><h3>Gio hang</h3><p class="cart-side-note">Gio hang va favorites la hai state rieng nhung cung dung tren moi page.</p></div>
+          <ul class="cart-modern-items" id="cart-items"><li class="cart-modern-empty"><p>Chua co san pham nao trong gio.</p></li></ul>
+          <div class="cart-side-panel"><strong>Luu y</strong><p>Yeu thich chi de danh dau, dat hang van di qua gio hang va checkout.</p><button class="cart-side-clear" id="clear-cart" type="button">Xoa toan bo gio hang</button></div>
+        </div>
+        <div class="cart-modern-right">
+          <div class="payment-card">
+            <div class="cart-summary">
+              <div class="cart-summary-row"><span>Tam tinh</span><strong id="cart-subtotal">0 d</strong></div>
+              <div class="cart-summary-row"><span>Phi giao hang</span><strong>Mien phi</strong></div>
+              <div class="cart-summary-row cart-summary-total"><span>Tong cong</span><strong id="cart-total">0 d</strong></div>
+            </div>
+            <div class="payment-method mb-4"><label class="payment-label">Phuong thuc thanh toan</label><div class="payment-options"><button class="payment-btn active" type="button" data-method="bank">The ngan hang</button><button class="payment-btn" type="button" data-method="cod">Thanh toan khi nhan hang</button></div></div>
+            <form class="needs-validation checkout-form-shell" id="checkout-form" novalidate>
+              <input type="hidden" id="checkout-payment" name="checkout-payment" value="bank">
+              <div class="mb-3 field-block"><label class="form-label small fw-bold" for="checkout-name">Ho va ten</label><input class="form-control payment-input" id="checkout-name" name="checkout-name" type="text" placeholder="Nhap ho va ten" required></div>
+              <div id="card-payment-section" style="display: none;"><div class="mb-3 field-block"><label class="form-label small fw-bold" for="card-number">So the</label><input class="form-control payment-input card-field" id="card-number" type="text" placeholder="1234 5678 9012 3456"></div></div>
+              <div id="cod-payment-section" style="display: block;">
+                <div class="mb-3 field-block"><label class="form-label small fw-bold" for="checkout-phone">So dien thoai</label><input class="form-control payment-input" id="checkout-phone" name="checkout-phone" type="tel" placeholder="0123 456 789" required></div>
+                <div class="mb-3 field-block"><label class="form-label small fw-bold" for="checkout-address">Dia chi nhan hang</label><textarea class="form-control payment-input" id="checkout-address" name="checkout-address" rows="2" placeholder="Nhap dia chi nhan hang" required></textarea></div>
+                <div class="mb-3 field-block"><label class="form-label small fw-bold" for="checkout-notes">Ghi chu</label><textarea class="form-control payment-input" id="checkout-notes" name="checkout-notes" rows="2" placeholder="Vi du: giao gio hanh chinh"></textarea></div>
+              </div>
+              <div id="checkout-feedback" class="alert mb-3 d-none" role="alert"></div>
+              <button class="btn-checkout w-100" id="place-order" type="submit">Hoan tat dat hang</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js" integrity="sha512-VQV96+PgNMbOmHd/xvUqLT2bzzQxPj5qKJ0QVMNmJVmtAK54L1hOh7E4vlN5CkHMJxLMI4uu6jnJL8H/+nEVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/js/api-client.js"></script>
+  <script src="/js/storefront-pages.js"></script>
+</body>
+</html>

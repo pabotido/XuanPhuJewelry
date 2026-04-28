@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Xuan Phu Admin | Products</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/admin.css">
+  <link rel="shortcut icon" href="/img/icon.ico" type="image/x-icon">
+</head>
+<body data-page="admin" data-admin-section="products">
+  <div class="admin-page" id="admin-page-shell">
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar-main">
+        <div class="admin-sidebar-brand">
+          <div class="admin-sidebar-mark">&#8801;</div>
+          <div>
+            <p class="admin-sidebar-label">He thong quan ly</p>
+            <h1>Xuan Phu Admin</h1>
+          </div>
+        </div>
+
+        <div class="admin-sidebar-group">
+          <p class="admin-sidebar-title">Danh muc quan ly</p>
+          <nav class="admin-tabs admin-sidebar-nav">
+            <a class="tab active" data-section="products" href="/admin">Quan ly san pham</a>
+            <a class="tab" data-section="orders" href="/admin/orders">Quan ly don hang</a>
+            <a class="tab" data-section="users" href="/admin/users">Quan ly tai khoan</a>
+          </nav>
+        </div>
+      </div>
+
+      <div class="admin-sidebar-footer">
+        <div class="admin-sidebar-group">
+          <p class="admin-sidebar-title">Truy cap nhanh</p>
+          <div class="admin-quick-links">
+            <a class="admin-quick-link" href="/">Xem trang khach</a>
+            <button class="admin-quick-link is-danger" type="button" id="admin-logout">Dang xuat</button>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="admin-workspace">
+      <header class="admin-topbar">
+        <div>
+          <p class="admin-breadcrumb" id="admin-current-label">He thong quan ly / San pham</p>
+          <h2 class="admin-topbar-title">Bang dieu khien quan tri</h2>
+          <p class="admin-topbar-subtitle" id="admin-current-description">Theo doi du lieu san pham va cap nhat noi dung tren page products rieng.</p>
+        </div>
+        <div class="admin-topbar-actions">
+          <button class="btn primary" id="admin-primary-action" type="button">+ Them san pham</button>
+        </div>
+      </header>
+
+      <main class="admin-main">
+        <div class="tab-content active" id="products-tab">
+          <section class="admin-shell admin-panel">
+            <div class="section-heading admin-heading">
+              <div>
+                <p class="section-kicker">Danh sach san pham</p>
+                <h2>San pham hien co</h2>
+                <p class="section-subtitle">Hiem thi dang bang de xem nhanh ma san pham, nhom hien thi, gia ban va thao tac chinh sua.</p>
+              </div>
+              <span class="admin-head-chip">Bang du lieu truc tiep</span>
+            </div>
+            <div id="admin-feedback" class="admin-feedback" aria-live="polite"></div>
+            <section class="admin-table-region" id="product-list">
+              <p class="gallery-message">Dang tai du lieu...</p>
+            </section>
+          </section>
+        </div>
+      </main>
+
+      <footer class="admin-footer">
+        <p>&copy; 2026 Xuan Phu. All rights reserved.</p>
+      </footer>
+    </div>
+  </div>
+
+  <div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg admin-modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTitle">Them san pham</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Dong"></button>
+        </div>
+        <div class="modal-body">
+          <form id="productForm">
+            <input type="hidden" id="prod-id">
+            <div class="row g-3 mb-3">
+              <div class="col-md-6"><label class="form-label" for="prod-price">Gia ban</label><input class="form-control" id="prod-price" type="number" min="0" step="1000" placeholder="Vi du: 2450000"></div>
+              <div class="col-md-6"><label class="form-label" for="prod-sku">Ma san pham</label><input class="form-control" id="prod-sku" type="text" placeholder="Vi du: XP-24K-001"></div>
+              <div class="col-md-6"><label class="form-label" for="prod-material">Chat lieu</label><input class="form-control" id="prod-material" type="text" placeholder="Vi du: Vang 24K"></div>
+              <div class="col-md-6"><label class="form-label" for="prod-weight">Khoi luong</label><input class="form-control" id="prod-weight" type="text" placeholder="Vi du: 1 chi"></div>
+            </div>
+            <div class="mb-3"><label class="form-label" for="prod-description">Mo ta chi tiet</label><textarea class="form-control" id="prod-description" rows="4" placeholder="Mo ta diem noi bat, phong cach, dip su dung..."></textarea></div>
+            <div class="mb-3"><label class="form-label" for="prod-name">Ten san pham</label><input class="form-control" id="prod-name" type="text" placeholder="Vi du: Nhan 24K"></div>
+            <div class="mb-3"><label class="form-label" for="prod-img">Link anh</label><input class="form-control" id="prod-img" type="url" placeholder="https://example.com/product.jpg"><div class="form-text">Co the dan link anh ngoai hoac bo trong de dung anh upload tu may.</div></div>
+            <div class="mb-3"><label class="form-label" for="prod-file">Upload anh tu may</label><input class="form-control" id="prod-file" type="file" accept="image/png,image/jpeg,image/webp,image/gif"><div class="form-text">Ho tro PNG, JPG, WEBP, GIF. Nen nho hon 5MB.</div></div>
+            <div class="mb-3"><label class="form-label">Xem truoc anh</label><div class="upload-preview" id="prod-preview-shell"><img id="prod-preview" alt="Xem truoc anh san pham"><p id="prod-preview-placeholder">Chua chon anh.</p></div></div>
+            <div class="mb-3"><label class="form-label" for="prod-category">Nhom hien thi</label><select class="form-select" id="prod-category"><option value="PhÃ¡Â»â€¢ biÃ¡ÂºÂ¿n">Phá»• biáº¿n</option><option value="MÃ¡Â»â€ºi nhÃ¡ÂºÂ¥t">Má»›i nháº¥t</option></select></div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn" data-bs-dismiss="modal">Huy</button>
+          <button type="button" class="btn primary" id="save-product">Luu san pham</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/api-client.js"></script>
+  <script src="/js/admin-pages.js"></script>
+  <script src="/js/admin-products-section.js"></script>
+</body>
+</html>

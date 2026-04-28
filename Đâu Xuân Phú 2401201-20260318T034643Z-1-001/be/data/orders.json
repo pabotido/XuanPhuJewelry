@@ -1,0 +1,192 @@
+[
+  {
+    "createdAt": "2026-04-08T16:57:29.313Z",
+    "currency": "VND",
+    "customerAddress": "Hà Nội",
+    "customerName": "Xuân Phú",
+    "customerPhone": "0375949688",
+    "items": [
+      {
+        "imageUrl": "/uploads/products/1775664992670-ff0e6f22357e-AnimeDressUp.png",
+        "name": "Anime",
+        "productId": 8,
+        "quantity": 1,
+        "sku": "",
+        "total": 0,
+        "unitPrice": 0
+      }
+    ],
+    "notes": "nhanh",
+    "orderNumber": "XP-MNQAJWMB-F17D",
+    "paymentMethod": "cod",
+    "status": "pending",
+    "totalAmount": 0
+  },
+  {
+    "createdAt": "2026-04-08T16:59:36.160Z",
+    "currency": "VND",
+    "customerAddress": "Hà Nội",
+    "customerName": "Xuân Phú",
+    "customerPhone": "0375949688",
+    "items": [
+      {
+        "imageUrl": "/uploads/products/1775664992670-ff0e6f22357e-AnimeDressUp.png",
+        "name": "Anime",
+        "productId": 8,
+        "quantity": 1,
+        "sku": "",
+        "total": 0,
+        "unitPrice": 0
+      }
+    ],
+    "notes": "",
+    "orderNumber": "XP-MNQAMMHS-8118",
+    "paymentMethod": "cod",
+    "status": "pending",
+    "totalAmount": 0
+  },
+  {
+    "createdAt": "2026-04-08T17:00:49.433Z",
+    "currency": "VND",
+    "customerAddress": "ádasd",
+    "customerName": "ádasds",
+    "customerPhone": "234234",
+    "items": [
+      {
+        "imageUrl": "/uploads/products/1775664992670-ff0e6f22357e-AnimeDressUp.png",
+        "name": "Anime",
+        "productId": 8,
+        "quantity": 1,
+        "sku": "",
+        "total": 0,
+        "unitPrice": 0
+      }
+    ],
+    "notes": "qưesad",
+    "orderNumber": "XP-MNQAO715-8730",
+    "paymentMethod": "cod",
+    "status": "pending",
+    "totalAmount": 0
+  },
+  {
+    "createdAt": "2026-04-08T17:13:38.967Z",
+    "currency": "VND",
+    "customerAddress": "HN",
+    "customerName": "Xuân Phú",
+    "customerPhone": "0375949688",
+    "items": [
+      {
+        "imageUrl": "/uploads/products/1775664992670-ff0e6f22357e-AnimeDressUp.png",
+        "name": "Anime",
+        "productId": 8,
+        "quantity": 1,
+        "sku": "",
+        "total": 0,
+        "unitPrice": 0
+      }
+    ],
+    "notes": "",
+    "orderNumber": "XP-MNQB4OT4-5F2F",
+    "paymentMethod": "cod",
+    "status": "pending",
+    "totalAmount": 0
+  },
+  {
+    "createdAt": "2026-04-08T18:45:23.125Z",
+    "currency": "VND",
+    "customerAddress": "N/A",
+    "customerName": "qưeqweqwe",
+    "customerPhone": "N/A",
+    "items": [
+      {
+        "imageUrl": "https://www.pnj.com.vn/site/san-pham/nhan-tron-1-chi-vang-24k-pnj-0000y000297.html?srsltid=AfmBOorX2mYRwGpE4H6DQZPLsEN72x8B066cwYXVp1tpNpb4ocu3XMu4",
+        "name": "Vàng Nhẫn",
+        "productId": 9,
+        "quantity": 1,
+        "sku": "CHI-9999",
+        "total": 17000000,
+        "unitPrice": 17000000
+      }
+    ],
+    "notes": "",
+    "orderNumber": "XP-MNQEENUE-4D0C",
+    "paymentMethod": "bank",
+    "status": "pending",
+    "totalAmount": 17000000
+  },
+  {
+    "createdAt": "2026-04-09T03:01:37.013Z",
+    "currency": "VND",
+    "customerAddress": "Hà Nội",
+    "customerEmail": "ticcito95@gmail.com",
+    "customerName": "admin",
+    "customerPhone": "0123456789",
+    "items": [
+      {
+        "imageUrl": "/uploads/products/1775677221187-f6aa48258965-462544428_868115192158501_40745595971189.jpg",
+        "name": "234234",
+        "productId": 10,
+        "quantity": 1,
+        "sku": "",
+        "total": 23423,
+        "unitPrice": 23423
+      }
+    ],
+    "notes": "",
+    "orderNumber": "XP-MNQW4TIV-7B01",
+    "paymentMethod": "bank",
+    "status": "pending",
+    "totalAmount": 23423,
+    "userId": null
+  },
+  {
+    "createdAt": "2026-04-09T08:32:34.949Z",
+    "currency": "VND",
+    "customerAddress": "HN",
+    "customerEmail": "ticcito95@gmail.com",
+    "customerName": "admin",
+    "customerPhone": "0123456789",
+    "items": [
+      {
+        "imageUrl": "/uploads/products/1775723134752-0226627b807e-thehs.jpg",
+        "name": "qưertyuiop",
+        "productId": 17,
+        "quantity": 1,
+        "sku": "",
+        "total": 1234567890,
+        "unitPrice": 1234567890
+      }
+    ],
+    "notes": "",
+    "orderNumber": "XP-MNR7YG05-8021",
+    "paymentMethod": "cod",
+    "status": "pending",
+    "totalAmount": 1234567890,
+    "userId": "8"
+  },
+  {
+    "createdAt": "2026-04-19T07:50:42.078Z",
+    "currency": "VND",
+    "customerAddress": "HCM",
+    "customerEmail": "hanh88885@gmail.com",
+    "customerName": "XuanPhu",
+    "customerPhone": "0123456788",
+    "items": [
+      {
+        "imageUrl": "/uploads/products/1776274098879-233c47fd358d-gia-vang-hom-nay-14_2171_1776125102.jpg",
+        "name": "Vàng fake",
+        "productId": 18,
+        "quantity": 1,
+        "sku": "XP-2006",
+        "total": 15000000,
+        "unitPrice": 15000000
+      }
+    ],
+    "notes": "nhanh nhe",
+    "orderNumber": "XP-MO5GV3Q6-168E",
+    "paymentMethod": "cod",
+    "status": "pending",
+    "totalAmount": 15000000,
+    "userId": "9"
+  }
+]

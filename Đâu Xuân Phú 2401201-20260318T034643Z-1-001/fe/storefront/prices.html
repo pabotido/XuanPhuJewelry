@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Xuan Phu Jewelry | Gia vang hom nay</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha512-t4Wk54rsPXxNZ+BOqGBEYM+nRPtB6S7VFH9X/1BHkPu6ePv3FvzWZpW+BmUi4nWkN2+d2rB9q85z+3GVVmZJw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="/css/storefront.css">
+  <link rel="shortcut icon" href="/img/icon.ico" type="image/x-icon">
+</head>
+<body data-page="storefront" data-store-page="prices">
+  <div class="page-shell">
+    <header class="topbar" id="page-top">
+      <div class="brand-lockup">
+        <p class="eyebrow">Theo doi thi truong</p>
+        <h1>Gia vang hom nay</h1>
+        <p class="brand-summary">Bang gia vang duoc tach thanh page rieng de khong tron voi danh sach san pham hay form tai khoan.</p>
+      </div>
+      <div class="actions">
+        <label class="search-shell" for="phu-search"><span class="search-icon" aria-hidden="true">⌕</span><input id="phu-search" type="search" placeholder="Trang gia vang..."></label>
+        <button class="btn secondary account-trigger" id="open-account" type="button"><span class="account-trigger-kicker" id="account-trigger-kicker">Tai khoan</span><strong class="account-trigger-name" id="account-trigger-name">Dang nhap / Dang ky</strong></button>
+        <button class="btn primary cart-toggle" id="open-cart" type="button">Gio hang <span class="cart-count" id="cart-count">0</span></button>
+      </div>
+    </header>
+
+    <nav class="tabs" aria-label="Dieu huong cua hang">
+      <a class="tab" href="/">Pho bien</a>
+      <a class="tab" href="/latest">Moi nhat</a>
+      <a class="tab" href="/favorites">Yeu thich</a>
+      <a class="tab active" href="/prices">Gia vang hom nay</a>
+      <a class="tab" href="/account">Tai khoan</a>
+    </nav>
+
+    <main>
+      <section class="price-panel surface-panel">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Theo doi thi truong</p>
+            <h2>Gia vang hom nay</h2>
+            <p id="gold-price-date" class="section-subtitle">Dang dong bo ngay cap nhat...</p>
+          </div>
+          <div class="section-actions">
+            <span class="price-chip">Tu dong lam moi moi 5 phut</span>
+            <button class="btn secondary" id="refresh-gold" type="button">Lam moi gia</button>
+          </div>
+        </div>
+        <div class="table-shell">
+          <table class="price-table">
+            <thead>
+              <tr><th>Loai vang</th><th>Gia mua (d/chi)</th><th>Gia ban (d/chi)</th><th>Thay doi</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Vang 24K</td><td>--</td><td>--</td><td>—</td></tr>
+              <tr><td>Vang 18K</td><td>--</td><td>--</td><td>—</td></tr>
+              <tr><td>Vang 14K</td><td>--</td><td>--</td><td>—</td></tr>
+              <tr><td>Bac 999</td><td>--</td><td>--</td><td>—</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="price-status">Du lieu gia co the thay doi theo thi truong va thoi diem cap nhat tu API.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <p class="footer-kicker">Xuan Phu Jewelry</p>
+        <strong>Bang gia tach rieng thanh mot page</strong>
+        <p>Thay vi dung mot tab nho trong index, page nay co route rieng de nguoi dung vao truc tiep.</p>
+      </div>
+      <div class="footer-links">
+        <div><span class="footer-heading">Kham pha</span><a href="/">Pho bien</a><a href="/latest">Moi nhat</a><a href="/favorites">Yeu thich</a></div>
+        <div><span class="footer-heading">Tai khoan</span><a href="/login">Dang nhap</a><a href="/register">Dang ky</a><a href="/account">Thong tin ca nhan</a></div>
+      </div>
+      <div class="footer-contact">
+        <span class="footer-heading">Lien he</span>
+        <a href="tel:0900000000">Hotline: 0900 000 000</a>
+        <a href="mailto:support@xuanphu.vn">support@xuanphu.vn</a>
+        <p>&copy; 2026 Xuan Phu. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <div class="overlay-shell" id="cart-overlay" aria-hidden="true">
+    <div class="overlay-backdrop" data-close-overlay="cart-overlay"></div>
+    <div class="overlay-panel cart-panel-modern">
+      <button class="overlay-close" type="button" data-close-overlay="cart-overlay" aria-label="Dong">×</button>
+      <div class="cart-modern-container">
+        <div class="cart-modern-left">
+          <div class="cart-modern-header"><p class="section-kicker">Don hang cua ban</p><h3>Gio hang</h3><p class="cart-side-note">Gio hang van dung chung tren toan bo storefront.</p></div>
+          <ul class="cart-modern-items" id="cart-items"><li class="cart-modern-empty"><p>Chua co san pham nao trong gio.</p></li></ul>
+          <div class="cart-side-panel"><strong>Luu y</strong><p>Ban co the xem gia vang va van mo gio hang ma khong can quay lai trang san pham.</p><button class="cart-side-clear" id="clear-cart" type="button">Xoa toan bo gio hang</button></div>
+        </div>
+        <div class="cart-modern-right">
+          <div class="payment-card">
+            <div class="cart-summary">
+              <div class="cart-summary-row"><span>Tam tinh</span><strong id="cart-subtotal">0 d</strong></div>
+              <div class="cart-summary-row"><span>Phi giao hang</span><strong>Mien phi</strong></div>
+              <div class="cart-summary-row cart-summary-total"><span>Tong cong</span><strong id="cart-total">0 d</strong></div>
+            </div>
+            <div class="payment-method mb-4"><label class="payment-label">Phuong thuc thanh toan</label><div class="payment-options"><button class="payment-btn active" type="button" data-method="bank">The ngan hang</button><button class="payment-btn" type="button" data-method="cod">Thanh toan khi nhan hang</button></div></div>
+            <form class="needs-validation checkout-form-shell" id="checkout-form" novalidate>
+              <input type="hidden" id="checkout-payment" name="checkout-payment" value="bank">
+              <div class="mb-3 field-block"><label class="form-label small fw-bold" for="checkout-name">Ho va ten</label><input class="form-control payment-input" id="checkout-name" name="checkout-name" type="text" placeholder="Nhap ho va ten" required></div>
+              <div id="card-payment-section" style="display: none;"><div class="mb-3 field-block"><label class="form-label small fw-bold" for="card-number">So the</label><input class="form-control payment-input card-field" id="card-number" type="text" placeholder="1234 5678 9012 3456"></div></div>
+              <div id="cod-payment-section" style="display: block;">
+                <div class="mb-3 field-block"><label class="form-label small fw-bold" for="checkout-phone">So dien thoai</label><input class="form-control payment-input" id="checkout-phone" name="checkout-phone" type="tel" placeholder="0123 456 789" required></div>
+                <div class="mb-3 field-block"><label class="form-label small fw-bold" for="checkout-address">Dia chi nhan hang</label><textarea class="form-control payment-input" id="checkout-address" name="checkout-address" rows="2" placeholder="Nhap dia chi nhan hang" required></textarea></div>
+                <div class="mb-3 field-block"><label class="form-label small fw-bold" for="checkout-notes">Ghi chu</label><textarea class="form-control payment-input" id="checkout-notes" name="checkout-notes" rows="2" placeholder="Vi du: giao gio hanh chinh"></textarea></div>
+              </div>
+              <div id="checkout-feedback" class="alert mb-3 d-none" role="alert"></div>
+              <button class="btn-checkout w-100" id="place-order" type="submit">Hoan tat dat hang</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js" integrity="sha512-VQV96+PgNMbOmHd/xvUqLT2bzzQxPj5qKJ0QVMNmJVmtAK54L1hOh7E4vlN5CkHMJxLMI4uu6jnJL8H/+nEVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/js/api-client.js"></script>
+  <script src="/js/storefront-pages.js"></script>
+  <script src="/js/gold-price.js"></script>
+</body>
+</html>

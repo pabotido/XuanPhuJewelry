@@ -1,0 +1,26 @@
+{
+  "17": {
+    "currency": "VND",
+    "description": "",
+    "material": "đồng giả vàng",
+    "price": 100000000,
+    "sku": "XP-2006",
+    "weight": "1 CÂY"
+  },
+  "18": {
+    "currency": "VND",
+    "description": "",
+    "material": "đồng giả vàng",
+    "price": 15000000,
+    "sku": "XP-2006",
+    "weight": "1 chỉ"
+  },
+  "19": {
+    "currency": "VND",
+    "description": "",
+    "material": "đồng giả vàng",
+    "price": 18000000,
+    "sku": "XP-2006",
+    "weight": "1 lượng"
+  }
+}

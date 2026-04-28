@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Xuan Phu Admin | Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/admin.css">
+  <link rel="shortcut icon" href="/img/icon.ico" type="image/x-icon">
+</head>
+<body data-page="admin" data-admin-section="login">
+  <section class="admin-auth-gate" id="admin-auth-gate">
+    <div class="admin-auth-card">
+      <p class="admin-auth-kicker">Khu vuc quan tri</p>
+      <h1>Dang nhap de vao trang admin</h1>
+      <p class="admin-auth-subtitle">Form login da tach thanh page rieng. Sau khi dang nhap, he thong se chuyen ban ve page admin phu hop.</p>
+
+      <form id="admin-inline-login-form" class="admin-auth-form" method="post" action="/admin/login">
+        <label class="admin-inline-label" for="admin-inline-username">Tai khoan</label>
+        <input class="admin-inline-input" id="admin-inline-username" name="username" type="text" placeholder="Nhap tai khoan admin" autocomplete="username" required>
+
+        <label class="admin-inline-label" for="admin-inline-password">Mat khau</label>
+        <input class="admin-inline-input" id="admin-inline-password" name="password" type="password" placeholder="Nhap mat khau admin" autocomplete="current-password" required>
+
+        <p id="admin-inline-login-feedback" class="admin-inline-feedback" aria-live="polite"></p>
+
+        <div class="admin-inline-actions">
+          <button class="btn primary" type="submit">Dang nhap</button>
+          <a class="btn" href="/">Ve trang khach</a>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/api-client.js"></script>
+  <script src="/js/admin-pages.js"></script>
+</body>
+</html>
